@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101020">
+  <title>Birthday Surprise 🎂</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stars"></div>
+
+  <main>
+    <!-- Countdown -->
+    <section class="countdown-screen" id="countdownScreen">
+      <div class="countdown-content">
+        <p class="tiny">A little surprise is waiting…</p>
+        <div class="number" id="days">--</div>
+        <div class="count-label">DAYS TO GO</div>
+        <div class="mini-time">
+          <span><b id="hours">--</b><small>HOURS</small></span>
+          <span><b id="minutes">--</b><small>MINUTES</small></span>
+          <span><b id="seconds">--</b><small>SECONDS</small></span>
+        </div>
+        <button class="start-btn" id="openBtn">Open the surprise ✨</button>
+      </div>
+    </section>
+
+    <!-- Birthday landing -->
+    <section class="hero page">
+      <div class="hero-copy">
+        <p class="eyebrow">04 • OCTOBER</p>
+        <h1>Happy<br><strong>Birthday</strong><br><em>Sweetie</em> 💛</h1>
+        <p class="sub">Today is your special day. A tiny corner of the internet made just to celebrate you.</p>
+        <button class="scroll-btn" data-target="gallery">Scroll through our memories ↓</button>
+      </div>
+      <div class="photo-ring">
+        <img src="photos/photo1.jpg" alt="Memory">
+        <img src="photos/photo2.jpg" alt="Memory">
+        <img src="photos/photo3.jpg" alt="Memory">
+        <img src="photos/photo4.jpg" alt="Memory">
+        <img src="photos/photo5.jpg" alt="Memory">
+        <img src="photos/photo6.jpg" alt="Memory">
+      </div>
+    </section>
+
+    <!-- Polaroid gallery -->
+    <section class="gallery page" id="gallery">
+      <div class="section-title">
+        <span>01</span>
+        <h2>Little memories</h2>
+        <p>Some moments deserve to stay forever.</p>
+      </div>
+
+      <div class="polaroids">
+        <figure class="polaroid p1"><img src="photos/photo1.jpg"><figcaption>Cutie 🥹</figcaption></figure>
+        <figure class="polaroid p2"><img src="photos/photo2.jpg"><figcaption>Dream Girl 🌸</figcaption></figure>
+        <figure class="polaroid p3"><img src="photos/photo3.jpg"><figcaption>Pretty 💛</figcaption></figure>
+        <figure class="polaroid p4"><img src="photos/photo4.jpg"><figcaption>Beautiful 🌷</figcaption></figure>
+        <figure class="polaroid p5"><img src="photos/photo5.jpg"><figcaption>Sunshine ☀️</figcaption></figure>
+        <figure class="polaroid p6"><img src="photos/photo6.jpg"><figcaption>Queen 👑</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Scrapbook -->
+    <section class="scrapbook page">
+      <div class="book">
+        <div class="book-cover">
+          <img src="photos/scrapbook-cover.jpg" alt="Scrapbook">
+          <div class="cover-text">A<br>BOOK<br>OF<br>MEMORIES</div>
+        </div>
+        <div class="book-page">
+          <div class="tape"></div>
+          <h2>Dear Birthday Girl,</h2>
+          <p>
+            Some people make ordinary days feel special without even trying.
+            Thank you for being one of those people.
+          </p>
+          <img src="photos/photo3.jpg" alt="Memory">
+          <p class="hand">Keep smiling. Keep shining. Keep being you. ✨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final message -->
+    <section class="final page">
+      <div class="final-card">
+        <p class="eyebrow">04 • OCTOBER • ALWAYS</p>
+        <h2>One more thing…</h2>
+        <p>
+          May this year bring you beautiful memories, peaceful moments,
+          unexpected happiness and everything your heart is quietly wishing for.
+        </p>
+        <div class="heart">♥</div>
+        <h3>Happy Birthday! 🎂</h3>
+        <button class="again" onclick="window.scrollTo({top:0, behavior:'smooth'})">↟ Start again</button>
+      </div>
+    </section>
+  </main>
+
+  <button class="music" id="musicBtn" title="Music">♪</button>
+  <audio id="music" loop>
+    <!-- Put your MP3 in the project folder and change the filename below. -->
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

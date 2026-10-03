@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#080914;color:#f5f1e8;
+  font-family:Inter,Arial,sans-serif;overflow-x:hidden
+}
+#stars{
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(circle at 20% 20%,#24264b 0,transparent 28%),
+    radial-gradient(circle at 80% 70%,#2a2141 0,transparent 30%),
+    #080914;
+}
+#stars:after{
+  content:"";position:absolute;inset:0;opacity:.7;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:37px 37px;
+  animation:drift 18s linear infinite;
+}
+@keyframes drift{to{transform:translateY(37px)}}
+
+main{position:relative}
+.page{min-height:100vh;padding:90px 7vw;display:flex;align-items:center;justify-content:center}
+
+.countdown-screen{
+  position:fixed;inset:0;z-index:20;background:#07070d;
+  display:grid;place-items:center;text-align:center;
+  transition:opacity .9s,visibility .9s
+}
+.countdown-screen.hide{opacity:0;visibility:hidden;pointer-events:none}
+.countdown-content{padding:30px}
+.tiny,.eyebrow{letter-spacing:.25em;text-transform:uppercase;font-size:12px;opacity:.7}
+.number{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(130px,28vw,300px);
+  line-height:.75;font-weight:600;
+  background:linear-gradient(135deg,#fff,#c6b77d);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.count-label{letter-spacing:.35em;font-size:12px;margin:20px 0 35px}
+.mini-time{display:flex;justify-content:center;gap:35px;margin-bottom:40px}
+.mini-time span{display:flex;flex-direction:column;gap:5px}
+.mini-time b{font-size:25px}.mini-time small{font-size:9px;letter-spacing:.18em;opacity:.55}
+button{font:inherit}
+.start-btn,.scroll-btn,.again{
+  border:1px solid #8e866b;background:transparent;color:#fff;
+  padding:13px 20px;border-radius:30px;cursor:pointer;transition:.3s
+}
+.start-btn:hover,.scroll-btn:hover,.again:hover{background:#d1bd75;color:#111}
+
+.hero{gap:8vw;justify-content:space-between;max-width:1400px;margin:auto}
+.hero-copy{max-width:520px}
+.hero h1{
+  font:600 clamp(65px,9vw,125px)/.76 "Cormorant Garamond",serif;
+  margin:20px 0
+}
+.hero h1 strong{font-weight:700}
+.hero h1 em{font-style:normal;color:#d8bd67}
+.sub{max-width:390px;color:#c7c5bd;line-height:1.8;font-size:14px}
+.scroll-btn{margin-top:25px}
+
+.photo-ring{
+  position:relative;width:min(44vw,520px);height:min(44vw,520px);
+  min-width:310px;min-height:310px
+}
+.photo-ring:before{
+  content:"";position:absolute;inset:8%;border:1px solid #77705d;
+  border-radius:50%;box-shadow:0 0 80px #544d2c55
+}
+.photo-ring img{
+  position:absolute;width:120px;height:150px;object-fit:cover;
+  border:7px solid #f4eee3;border-bottom-width:24px;
+  box-shadow:0 15px 30px #0008
+}
+.photo-ring img:nth-child(1){top:0;left:38%;transform:rotate(-8deg)}
+.photo-ring img:nth-child(2){top:14%;right:3%;transform:rotate(9deg)}
+.photo-ring img:nth-child(3){bottom:5%;right:9%;transform:rotate(12deg)}
+.photo-ring img:nth-child(4){bottom:0;left:33%;transform:rotate(-5deg)}
+.photo-ring img:nth-child(5){bottom:18%;left:2%;transform:rotate(-12deg)}
+.photo-ring img:nth-child(6){top:25%;left:0;transform:rotate(5deg)}
+
+.gallery{display:block;max-width:1300px;margin:auto}
+.section-title span{font-size:11px;letter-spacing:.25em;color:#cdbb73}
+.section-title h2{font:600 clamp(45px,6vw,80px)/1 "Cormorant Garamond",serif;margin:10px 0}
+.section-title p{color:#aaa;max-width:420px}
+.polaroids{
+  min-height:650px;position:relative;max-width:1100px;margin:30px auto
+}
+.polaroid{
+  position:absolute;background:#f2eee4;color:#1a1a1a;
+  padding:12px 12px 28px;width:190px;margin:0;
+  box-shadow:0 18px 45px #0008;transition:.35s
+}
+.polaroid img{width:100%;height:220px;object-fit:cover;display:block}
+.polaroid figcaption{font-family:"Cormorant Garamond",serif;font-size:20px;text-align:center;padding-top:8px}
+.p1{left:4%;top:80px;transform:rotate(-8deg)}
+.p2{left:28%;top:15px;transform:rotate(6deg)}
+.p3{right:7%;top:65px;transform:rotate(9deg)}
+.p4{left:13%;top:350px;transform:rotate(7deg)}
+.p5{left:43%;top:300px;transform:rotate(-5deg)}
+.p6{right:10%;top:350px;transform:rotate(-9deg)}
+.polaroid:hover{transform:rotate(0) translateY(-12px) scale(1.04);z-index:5}
+
+.scrapbook{background:linear-gradient(#0a0a15,#111329)}
+.book{display:grid;grid-template-columns:1fr 1fr;max-width:900px;box-shadow:0 30px 80px #0009}
+.book-cover,.book-page{min-height:560px;padding:45px;background:#e8dfc9;color:#25211b}
+.book-cover{position:relative;background:#25243a;color:#d8c78d;display:grid;place-items:center;overflow:hidden}
+.book-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}
+.cover-text{position:relative;text-align:center;font:600 48px/1.05 "Cormorant Garamond",serif;letter-spacing:.08em}
+.book-page{position:relative;background:#eee6d2}
+.book-page h2{font:600 42px "Cormorant Garamond",serif;margin:20px 0}
+.book-page p{line-height:1.8;color:#4e493f}
+.book-page img{width:170px;height:190px;object-fit:cover;transform:rotate(4deg);box-shadow:0 10px 20px #0004}
+.hand{font-family:"Cormorant Garamond",serif;font-size:23px!important}
+.tape{position:absolute;top:20px;right:40px;width:85px;height:24px;background:#d6bf7c88;transform:rotate(4deg)}
+
+.final{text-align:center;background:radial-gradient(circle at center,#242038,#080914)}
+.final-card{max-width:680px}
+.final h2{font:600 clamp(55px,8vw,90px)/1 "Cormorant Garamond",serif;margin:15px 0}
+.final p{line-height:1.9;color:#c6c4bd}
+.heart{font-size:70px;color:#d5b95f;margin:25px}
+.final h3{font:600 34px "Cormorant Garamond",serif}
+.music{
+  position:fixed;right:20px;bottom:20px;z-index:30;width:46px;height:46px;
+  border-radius:50%;border:1px solid #777;background:#111a;color:#fff;cursor:pointer
+}
+
+@media(max-width:800px){
+  .page{padding:70px 22px}
+  .hero{flex-direction:column;align-items:flex-start;padding-top:100px}
+  .photo-ring{align-self:center;width:330px;height:330px}
+  .photo-ring img{width:82px;height:110px;border-width:5px;border-bottom-width:17px}
+  .polaroids{min-height:850px}
+  .polaroid{width:145px;padding:8px 8px 20px}
+  .polaroid img{height:170px}
+  .p1{left:0}.p2{left:28%;top:60px}.p3{right:0;top:150px}
+  .p4{left:3%;top:420px}.p5{left:38%;top:360px}.p6{right:0;top:520px}
+  .book{grid-template-columns:1fr;max-width:420px}
+  .book-cover,.book-page{min-height:450px}
+}
